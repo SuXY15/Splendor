@@ -1,4 +1,4 @@
-Splender <a name="Title"> </a>
+Splendor <a name="Title"> </a>
 =======
 李明轩 2015010705 [limx15@mails.tsinghua.edu.cn](limx15@mails.tsinghua.edu.cn)
 苏星宇 2015010697 [suxy15@mails.tsinghua.edu.cn](suxy15@mails.tsinghua.edu.cn)
