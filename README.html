@@ -1042,17 +1042,18 @@ body .markdown-body
 </div>
 <h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(一) 前期准备</h3>
 <h4 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 背景介绍 <a name="background"> </a></h4>
+<p><img alt="" src="https://raw.githubusercontent.com/SuXY15/Splender/master/pic/01_background.jpg" /></p>
 <h4 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 任务分配 <a name="arrangement"> </a></h4>
 <ul>
-<li><strong>(一)</strong> 需求分析、明确功能（李明轩、苏星宇）</li>
-<li><strong>(二)</strong> 架构设计、实现方式（李明轩、苏星宇）</li>
-<li><strong>(三)</strong> 逻辑实现【主体框架】（李明轩、苏星宇）<ul>
+<li><strong>(一)</strong> 需求分析、明确功能（李明轩）</li>
+<li><strong>(二)</strong> 架构设计、实现方式（苏星宇）</li>
+<li><strong>(三)</strong> 逻辑实现【主体框架】（李明轩）<ul>
 <li><em>1.</em> 游戏流程（开始、对局、结束、排行）</li>
 <li><em>2.</em> 规则判定（胜负、操作允许与否）</li>
 <li><em>3.</em> 数据处理（更新、重置、储存、加载）</li>
 </ul>
 </li>
-<li><strong>(四)</strong> 界面实现【布局配置】（李明轩、苏星宇）<ul>
+<li><strong>(四)</strong> 界面实现【布局配置】（苏星宇）<ul>
 <li><em>1.</em> 消息响应（消息传递、界面更新）</li>
 <li><em>2.</em> 人机交互（页面、控件、提示弹窗&hellip;）</li>
 </ul>
@@ -1070,6 +1071,47 @@ body .markdown-body
 <p><a href="#table">回到目录</a></p>
 <h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(二) 开发记录</h3>
 <h4 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. 需求分析 <a name="analyze"> </a></h4>
+<ul>
+<li>
+<p>牌属性：</p>
+<ul>
+<li>兑换需求(各色号的宝石数)</li>
+<li>牌面点数(0/1,1/2,2,3(贵族),4)</li>
+<li>卡片颜色(红、蓝、白、黑、绿)</li>
+<li>牌面图片(基色调与卡片颜色相同)</li>
+<li>持有状态(某人、牌区、牌池)</li>
+<li>界面位置(区域)</li>
+</ul>
+</li>
+<li>
+<p>人状态：</p>
+<ul>
+<li>持有的币</li>
+<li>持有的牌</li>
+<li>当前分值</li>
+</ul>
+</li>
+<li>
+<p>币池：</p>
+<ul>
+<li>每一种币的数目</li>
+</ul>
+</li>
+<li>
+<p>轮盘：</p>
+<ul>
+<li>当前轮数目</li>
+<li>当前轮进行方</li>
+<li>当前轮进行时间</li>
+<li>当前操作(换币、换牌)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>娱乐性：<br />
+Say &ldquo;Foolish Developer!&rdquo;<br />
+Say &ldquo;Foolish Game Player!&rdquo;</p>
+</blockquote>
 <h4 id="2_1"><a name="user-content-2_1" href="#2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. 架构设计 <a name="design"> </a></h4>
 <h4 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. 逻辑实现 <a name="logical"> </a></h4>
 <h4 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. 界面实现 <a name="UI"> </a></h4>
