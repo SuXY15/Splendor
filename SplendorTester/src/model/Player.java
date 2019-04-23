@@ -7,57 +7,50 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Serializable;
 import java.util.Queue;
 import java.util.Stack;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.text.Document;
 
 //玩家属性
-public class Player extends JLabel implements Serializable{
+public class Player extends JPanel {
 	private static final long serialVersionUID = -1749317213488970787L;
 	Game game;
-	transient JPanel player_gains; // 战利品区
-	transient Canvas player_cArea; // 已有卡片存放区
-	transient Canvas player_dArea; // 已有钻石存放区
-	transient Canvas player_eArea; // 扣押卡片存放区
-	transient JTextPane player_grade;
-	transient JTextPane player_name;
-	transient JTextPane player_mArea; // 消息通知区
-	transient Document player_msg;
-	transient JButton player_exchange;
-	transient JButton player_escort;
-	transient JButton player_buy;
+	JPanel player_gains; // 战利品区
+	Canvas player_cArea; // 已有卡片存放区
+	Canvas player_dArea; // 已有钻石存放区
+	Canvas player_eArea; // 扣押卡片存放区
+	JTextPane player_grade;
+	JTextPane player_name;
+	JTextPane player_mArea; // 消息通知区
+	Document player_msg;
+	JButton player_exchange;
+	JButton player_escort;
+	JButton player_buy;
 
-	String name;
-	Player MySelf = this;
-	boolean myTurn = true;
-	int score = 0;
-	int mypoints;
-	int[] mydiamonds = new int[6]; // 硬币数（可消费）
-	int[] mycoins = new int[6]; // 硬币+已有卡所含宝石数
-	int[] mycards = new int[5]; // 卡牌数量
-	int[] myowes = new int[5]; // 赎回所需要的硬币数量
-	Stack<Card> eCard = new Stack<Card>();
+	protected boolean myTurn = true;
+	protected String name;
+	protected int score = 0;
+	protected Player MySelf = this;
+	protected int[] mydiamonds = new int[6]; // 硬币数（可消费）
+	protected int[] mycoins = new int[6]; // 硬币+已有卡所含宝石数
+	protected int[] mycards = new int[5]; // 卡牌数量
+	protected int[] myowes = new int[5]; // 赎回所需要的硬币数量
+	protected Stack<Card> eCard = new Stack<Card>();
 
 	// 初始化
 	public Player(final Game game, String name) {
 		this.game = game;
 		this.name = name;
-		mypoints = 0;
+		score = 0;
 		for (int i = 0; i < 6; i++) {
 			mydiamonds[i] = 0;
 			mycoins[i] = 0;
 		}
-		viewInit();
-	}
-
-	public void viewInit() {
 		setLayout(null);
 		// 玩家 姓名
 		player_name = new JTextPane();
@@ -113,7 +106,6 @@ public class Player extends JLabel implements Serializable{
 		player_buy.setBounds(196, 610, 69, 30);
 		player_buy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(game.cardChecker);
 				if (buyCard(game.cardChecker))
 					MySelf.player_mArea.setText("购买卡片成功.\n");
 			}
@@ -219,13 +211,8 @@ public class Player extends JLabel implements Serializable{
 		player_gains.add(player_cArea);
 		this.add(player_gains);
 		player_gains.repaint();
-		
-		if(!myTurn){
-			player_buy.setVisible(false);
-			player_escort.setVisible(false);
-			player_exchange.setVisible(false);
-		}
 	}
+
 	// 买牌
 	boolean buyCard(Card card) {
 		// 如果没有选中卡片
@@ -246,16 +233,12 @@ public class Player extends JLabel implements Serializable{
 			game.coins[i].num += (temp > 0 ? temp : 0);
 			game.coins[i].repaint();
 		}
-		// 更新卡片和总购买额度
+		// 更新卡牌和总购买额度
 		mycards[Common.getPosition(card.color)] += 1;
 		this.score += card.value;
 		
-		// 买完的卡片清出卡片区
 		card.checked = false;
-		game.cardChecker = null;
-		game.cards[card.rank-1].remove(card);
-		game.CardRefresh();
-		
+		card.repaint();
 		// 动画现实卡片走向
 		int clr = Common.getPosition(card.color);
 		int[] pos = { card.getX() + 350, card.getY() + 10,
@@ -313,13 +296,6 @@ public class Player extends JLabel implements Serializable{
 				mydiamonds[i] -= (temp > 0 ? temp : 0);
 				mydiamonds[i] += myowes[i];
 			}
-			
-			// 买完的卡片清出卡片区
-			card.checked = false;
-			game.cardChecker = null;
-			game.cards[card.rank-1].remove(card);
-			game.CardRefresh();
-			
 			// 动画现实卡片走向
 			int[] pos = { card.getX() + 350, card.getY() + 10, game.nowTurn * 1100 + 145, 140 };
 			int[] size = { card.getWidth(), card.getHeight(), 160, 250 };
@@ -343,7 +319,7 @@ public class Player extends JLabel implements Serializable{
 			}
 			Card temp = eCard.pop();
 			mycards[Common.getPosition(temp.color)] += 1;
-			this.mypoints += temp.value;
+			this.score += temp.value;
 			// 动画现实卡片走向
 			int clr = Common.getPosition(temp.color);
 			int[] pos = { game.nowTurn * 1100 + 145, 140, 25 + game.nowTurn * 1100 + clr * 56 + (mycards[clr] % 4) * 12,

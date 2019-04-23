@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="model.Game" x="440" y="35">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Card"
+            endpointName="cards" kind="Simple"/>
+        <Association destinationClassName="model.Coin"
+            endpointName="coins" kind="Simple"/>
+        <Association destinationClassName="model.Player"
+            endpointName="players" kind="Simple"/>
+        <Association destinationClassName="model.Card"
+            endpointName="cardChecker" kind="Simple"/>
+        <Communication destinationClassName="model.Player"/>
+        <Communication destinationClassName="model.Coin"/>
+        <Communication destinationClassName="model.LogIn"/>
+    </Class>
+    <Class name="model.Player" x="945" y="23">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Game"
+            endpointName="game" kind="Simple"/>
+        <Association destinationClassName="model.Player"
+            endpointName="MySelf" kind="Simple"/>
+        <Communication destinationClassName="model.Game"/>
+        <Communication destinationClassName="model.Card"/>
+        <Communication destinationClassName="model.Common"/>
+        <Communication destinationClassName="model.Anime"/>
+    </Class>
+    <Class name="model.Coin" x="75" y="508">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Game"
+            endpointName="game" kind="Simple"/>
+        <Communication destinationClassName="model.Game"/>
+        <Communication destinationClassName="model.Card"/>
+        <Communication destinationClassName="model.Common"/>
+    </Class>
+    <Class name="model.LogIn" x="269" y="150">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="model.Card" x="536" y="445">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Game"
+            endpointName="game" kind="Simple"/>
+        <Communication destinationClassName="model.Coin"/>
+        <Communication destinationClassName="model.Common"/>
+    </Class>
+    <Class name="model.Diamond" x="90" y="176">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="model.Anime" x="128" y="333">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Game"
+            endpointName="game" kind="Simple"/>
+    </Class>
+    <Class name="model.Common" x="266" y="59">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="model.Diamond"
+            endpointName="diamonds" kind="Simple"/>
+    </Class>
+</ClassDiagram>

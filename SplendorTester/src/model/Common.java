@@ -2,11 +2,6 @@ package model;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 public class Common {
 	public static String[] cardImg = { 

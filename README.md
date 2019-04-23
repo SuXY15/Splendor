@@ -3,49 +3,51 @@ Splendor <a name="Title"> </a>
 李明轩 2015010705 [limx15@mails.tsinghua.edu.cn](limx15@mails.tsinghua.edu.cn)
 苏星宇 2015010697 [suxy15@mails.tsinghua.edu.cn](suxy15@mails.tsinghua.edu.cn)
 
-**目录** <a name="table"> </a>
+### 游戏说明
 
-[TOC]
+![](pic/01_background.jpg)
 
-### (一) 前期准备
-#### 1. 背景介绍 <a name="background"> </a>
++ Splender 是一个多人游戏。该游戏分为三个“元素”：最上方的五张“贵族牌”、中间三排“发展卡”、最下方的六种“宝石币”。玩家每回合可执行以下的操作之一：
 
-#### 2. 任务分配 <a name="arrangement"> </a>
-+ **(一)** 需求分析、明确功能（李明轩）
-+ **(二)** 架构设计、实现方式（苏星宇）
-+ **(三)** 逻辑实现【主体框架】（李明轩）
-    - _1._ 游戏流程（开始、对局、结束、排行）
-    - _2._ 规则判定（胜负、操作允许与否）
-    - _3._ 数据处理（更新、重置、储存、加载）
-+ **(四)** 界面实现【布局配置】（苏星宇）
-    - _1._ 消息响应（消息传递、界面更新）
-    - _2._ 人机交互（页面、控件、提示弹窗...）
-    
-#### 3. 预期难点 <a name="prediction"> </a>
-1. 代码量、工作量较大（初步估计3000+）
-2. 界面设计、实现难度大
-3. 兼容性问题
-4. 程序鲁棒性、用户体验
-5. 背景音乐[进阶]
-6. 动画实现[进阶]
+  1. 得到三个颜色各异的“宝石币”，或两个颜色相同的“宝石币”。（金色宝石币除外）
+  2. 用“发展卡”左方显示的相应宝石数量去换取自己想要的“发展卡”（比如用两个蓝色和两个红色宝石去换取右下角的“发展卡”），将用掉的“宝石”放回宝石堆里。
+  3. 得到一个金色的宝石，并从已显示的“发展卡”堆中任意取来一个自己心仪的“发展卡”，将其翻面，等以后自己有足够的宝石数量时再将其兑换（翻回正面，作为自己的牌使用）
+  4. 兑换自己手中的翻面状态的“发展牌”。
 
-[回到目录](#table)
++ 使用 `Java awt` 和 `Java swing` 实现界面如下：
 
-### (二) 开发记录
-#### 1. 需求分析 <a name="analyze"> </a>
+  ![](pic/02_View.jpg)
 
-#### 2. 架构设计 <a name="design"> </a>
+  ![](pic/03_Over.jpg)
 
-#### 3. 逻辑实现 <a name="logical"> </a>
+### 文档
 
-#### 4. 界面实现 <a name="UI"> </a>
++ 类图
 
-[回到目录](#table)
+![](doc/类图.jpg)
 
-### (三) 使用说明 <a name="help"> </a>
++ [选题与需求分析报告](doc/选题与需求分析报告.pdf)
++ [设计说明书](doc/设计说明书.pdf)
++ [测试报告](doc/测试报告.pdf)
++ [用户手册](doc/用户手册.pdf)
 
-[回到目录](#table)
++ 代码结构
 
-### (四) 参考资料 <a name="reference"> </a>
+  ```bash
+       160 SplendorTester/src/app/GameViewTester.java
+        74 SplendorTester/src/app/GameWindowTester.java
+        74 SplendorTester/src/app/ImgTester.java
+        43 SplendorTester/src/app/LayerTester.java
+        49 SplendorTester/src/model/Anime.java
+       144 SplendorTester/src/model/Card.java
+       175 SplendorTester/src/model/Coin.java
+        71 SplendorTester/src/model/Common.java
+        23 SplendorTester/src/model/Diamond.java
+       190 SplendorTester/src/model/Game.java
+        62 SplendorTester/src/model/LogIn.java
+       357 SplendorTester/src/model/Player.java
+       107 SplendorTester/src/model/classDiagram.mgc
+      1529 total
+  ```
 
-[回到目录](#table)
+  

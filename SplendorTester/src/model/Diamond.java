@@ -10,8 +10,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 class Diamond{
-	transient Color color;
-	transient Image img;
+	Color color;
+	Image img;
 	public Diamond(Color color) {
 		this.color = color;
 		try {

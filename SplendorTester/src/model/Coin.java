@@ -7,21 +7,20 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
-import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class Coin extends JLabel implements MouseListener, Serializable {
+public class Coin extends JLabel implements MouseListener {
 	private static final long serialVersionUID = -8973407146698495L;
 	int num;
 	protected Color color;
-	Game game;
+	protected Game game;
+	protected Image img;
+	protected Image bufferImage;
 	protected int checked;
-	protected int width, height;
-	transient protected Image img;
-	transient protected Image bufferImage;
+	int width, height;
 
 	public Coin(Game game, int i) {
 		this.game = game;
@@ -33,15 +32,6 @@ public class Coin extends JLabel implements MouseListener, Serializable {
 		}
 		this.setIcon(new ImageIcon(img));
 		this.addMouseListener(this);
-	}
-	
-	public void loadImg() {
-		try {
-			this.img = ImageIO.read(new File(Common.coinImg[Common.getPosition(color)]));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		this.setIcon(new ImageIcon(img));
 	}
 
 	public Color getColor() {
