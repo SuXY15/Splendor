@@ -20,6 +20,15 @@ Splendor <a name="Title"> </a>
 
   ![](pic/03_Over.jpg)
 
+### 使用说明
+
+```shell
+# 编译
+make build
+# 运行
+make run
+```
+
 ### 文档
 
 + 类图
@@ -34,19 +43,19 @@ Splendor <a name="Title"> </a>
 + 代码结构
 
   ```bash
-       160 SplendorTester/src/app/GameViewTester.java
-        74 SplendorTester/src/app/GameWindowTester.java
-        74 SplendorTester/src/app/ImgTester.java
-        43 SplendorTester/src/app/LayerTester.java
-        49 SplendorTester/src/model/Anime.java
-       144 SplendorTester/src/model/Card.java
-       175 SplendorTester/src/model/Coin.java
-        71 SplendorTester/src/model/Common.java
-        23 SplendorTester/src/model/Diamond.java
-       190 SplendorTester/src/model/Game.java
-        62 SplendorTester/src/model/LogIn.java
-       357 SplendorTester/src/model/Player.java
-       107 SplendorTester/src/model/classDiagram.mgc
+       160 src/app/GameViewTester.java
+        74 src/app/GameWindowTester.java
+        74 src/app/ImgTester.java
+        43 src/app/LayerTester.java
+        49 src/model/Anime.java
+       144 src/model/Card.java
+       175 src/model/Coin.java
+        71 src/model/Common.java
+        23 src/model/Diamond.java
+       190 src/model/Game.java
+        62 src/model/LogIn.java
+       357 src/model/Player.java
+       107 src/model/classDiagram.mgc
       1529 total
   ```
 

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="sanguosha-alpha-0.5.11_(2013-6-13)/src"/>
-	<classpathentry kind="lib" path="sanguosha-alpha-0.5.11_(2013-6-13)/lib/dom4j-1.6.jar"/>
-	<classpathentry kind="output" path="sanguosha-alpha-0.5.11_(2013-6-13)/bin"/>
-</classpath>
